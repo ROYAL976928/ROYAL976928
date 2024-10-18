@@ -1,0 +1,37 @@
+pratical 3
+   1
+<html>
+<head>
+<title> GCD </title> <script type="text/javascript"> function gcd() { var x,y; x=parseInt(document.myform.n1.value); y=parseInt(document.myform.n2.value); while(x!=y) { if(x>y) x=x-y; else y=y-x; }
+document.myform.result.value=x;
+}
+</script>
+</head>
+<body>
+<h1 align="center"> Program to calculate gcd of two numbers </h1>
+<hr color="red">
+<center>
+Enter two numbers :
+<form name="myform">
+Number 1 : <input type="text" name="n1" value=""> <br> <br>
+Number 2 : <input type="text" name="n2" value=""> <br> <br> <input type="button" name="btn" value="Get GCD" onClick="gcd()"> <br> <br>
+GCD is : <input type="text" name="result" value="">
+</form>
+</body> </html>
+
+
+   2
+java script wala
+
+Source Code:
+package pracgcd; import org.openqa.selenium.By; import org.openqa.selenium.WebDriver; import org.openqa.selenium.firefox.FirefoxDriver; public class GCD {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+System.setProperty("webdriver.gecko.driver","C://Users//Admin//Desktop//geckod river.exe");
+WebDriver driver = new FirefoxDriver();
+driver.get("file:///C://Users//Admin//Desktop//gcd.html" );
+driver.manage().window().maximize(); driver.findElement(By.id("n1")).sendKeys("2"); driver.findElement(By.id("n2")).sendKeys("14"); //driver.findElement(By.id("txt1")).sendKeys("49"); driver.findElement(By.name("gcd")).click();
+String result=
+driver.findElement(By.name("result")).getAttribute("name=result"); System.out.println("the gcd is:"+ result); }
+}
+ 

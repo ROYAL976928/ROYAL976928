@@ -1,0 +1,41 @@
+//html
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <select>
+        <option>Volvo</option>
+        <option>Express</option>
+        <option>Mercedes</option>
+        <option>RajaHamsa</option>
+    </select>
+</body>
+</html>
+
+
+//java wala
+package p8;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class TestCombobox {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.gecko.driver", "C://Users//Admin//Desktop//geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        driver.get("file:///C://Users//Admin//Desktop//combocount.html");
+
+        Select comboBox = new Select(driver.findElement(By.xpath("//select")));
+        List<WebElement> options = comboBox.getOptions();
+
+        System.out.println("Number of Items: " + options.size());
+        
+        driver.quit(); // Close the browser
+    }
+}

@@ -1,0 +1,27 @@
+package prac7;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Prac7 {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.gecko.driver", "C://Users//Admin//Desktop//geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        
+        driver.get("http://google.co.in/");
+        
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Total links = " + links.size());
+        
+        List<WebElement> buttons = driver.findElements(By.xpath("//input[@type='button' or @type='submit']"));
+        System.out.println("Total buttons = " + buttons.size());
+        
+        List<WebElement> textboxes = driver.findElements(By.xpath("//input[@type='text' or @type='password']"));
+        System.out.println("Total textboxes = " + textboxes.size());
+        
+        driver.quit(); // Close the browser
+    }
+}

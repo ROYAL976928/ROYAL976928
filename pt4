@@ -1,0 +1,19 @@
+package prackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Pack {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.gecko.driver", "C://Users//Admin//Desktop//geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        
+        driver.get("https://mail.google.com");
+        driver.findElement(By.id("identifierId")).sendKeys("jvmcollegeairoli@gmail.com");
+        driver.findElement(By.id("identifierNext")).click(); // Use 'identifierNext' for the next button
+        // Optionally add a wait here for the password field to appear
+        // driver.findElement(By.name("password")).sendKeys("yourPassword");
+        // driver.findElement(By.id("passwordNext")).click();
+    }
+}
